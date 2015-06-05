@@ -13,12 +13,6 @@ var defaultOptions = {
 map = new google.maps.Map(document.getElementById('map'), defaultOptions);
 
 
-$("#bike-toggle").click(function(){
-  console.log("toggle")
-  var bikeLayer = new google.maps.BicyclingLayer();
-  bikeLayer.setMap(map);
-})
-
   if(navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
       var pos = new google.maps.LatLng(position.coords.latitude,
@@ -51,9 +45,6 @@ $("#bike-toggle").click(function(){
       position: defaultCenter,
       content: content
     };
-
-    var infowindow = new google.maps.InfoWindow(options);
-    map.setCenter(options.position);
   }
 }
 
