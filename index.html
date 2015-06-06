@@ -1,6 +1,4 @@
 <!DOCTYPE html>
-
-
 <html>
   <head>
     <title>FarmersMarkets</title>
@@ -12,57 +10,37 @@
 
     <!-- scripts -->
     <script type="text/javascript" src="javascripts/map.js"></script>
-    <script type="text/javascript" src="javascripts/bikeracks.js"></script>
+    <script type="text/javascript" src="javascripts/markets.js"></script>
 
     <!-- styles -->
-    <link rel="stylesheet" type="text/css" href="stylesheets/styles.css">
-    <!-- skeleton -->
-    <link rel="stylesheet" type="text/css" href="stylesheets/skeleton/normalize.css">
-    <link rel="stylesheet" type="text/css" href="stylesheets/skeleton/skeleton.css">
-    <link href='http://fonts.googleapis.com/css?family=Sacramento' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
 
   </head>
   <body>
-    <div id="wrapper">
     <div class="container">
-
-      <div class="row">
-        <div class="twelve columns"><h1> Chicago Farmers Market Finder</h1></div>
-        <div class="twelve columns"><h5>  </h5></div>
-        <!-- <HR> -->
-      </div>
-
-      <div class="row">
-        <!-- user data input form -->
-        <div class="six columns" id="search">
+      <h1> Chicago Farmers Market Finder</h1>
+        <div id="search">
           <label for="address"> Enter your Zip Code </label>
           <input id="address" type="text" placeholder="Chicago, IL">
+          <label for="day"> Enter your day of the week </label>
+          <input id="day" type="text" placeholder="Sunday">
+            <div class="two columns">
+              <br>
+              <input class="button-primary" type="button" value="Find Farmers Markets" onclick="codeAddress()">
+            </div>
         </div>
-        <div class="two columns">
-          &nbsp;
-        </div>
-        <div class="two columns">
-          <br>
-        <input class="button-primary" type="button" value="Find Farmers Markets" onclick="codeAddress()">
-        </div>
-      </div>
-      <div class="row">
-
-      </div>
-
+    </div>
 
       <div class="row">
       <!-- map -->
-        <div class="six columns" id="map"></div>
+        <div id="map"></div>
         <div class="two columns">
           &nbsp;
         </div>
-        <div id="four" class="four columns">
+        <div>
         <ul id="saved"><p>Click a marker to see the address</p></ul>
         </div>
       </div>
-
-    </div>
   </div>
   </body>
 </html>
