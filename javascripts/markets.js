@@ -74,7 +74,7 @@ function codeAddress() {
       }
     });
   }
-  else if(day && (address==false)){
+  else if((address==false)){
     for (var i = 0; i < markets.length; i++) {
       if (markets[i].day == day) {
         map.setZoom(15);
