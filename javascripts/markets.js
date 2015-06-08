@@ -55,7 +55,7 @@ var image = 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png';
 
 function codeAddress() {
   var address = document.getElementById("address").value;
-  var day = document.getElementById("day").value;
+  // var day = document.getElementById("day").value;
 
   if(address && (day==false)){
     geocoder.geocode( { "address": address}, function(results, status) {

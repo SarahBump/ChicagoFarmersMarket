@@ -1,6 +1,6 @@
 
 #INTRODUCTION
-This is a Chicago Farmers Market Finder application. The application was built entirely on the client-side using HTML, CSS, javascript, and JQuery. I used Chicago Open Source Data for the information on the markets and the googlemaps API for the map.
+This is a Chicago Farmers Market Finder application. The application was built entirely on the client-side using HTML, CSS, javascript, and JQuery. I used Chicago Open Source Data for the information on the markets and the googlemaps API for the map. You can visit the site here: http://chifarmar.com/
 #Screenshots
 
 ![Home Page](/Home.png)
