@@ -125,8 +125,5 @@ function codeAddress() {
 
 
   google.maps.event.addDomListener(window, 'load', initializeMap);
-<<<<<<< HEAD
 
   google.maps.event.addDomListener(window, 'load', codeAddress);
-=======
->>>>>>> 37a96f263e556cc1fed777f7ebb338dbfdef4b9d
