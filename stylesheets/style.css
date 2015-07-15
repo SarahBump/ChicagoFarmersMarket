@@ -54,6 +54,7 @@ p {
   font: helvetica;
 }
 li {
+  margin-top: 10px; 
   padding-left: 2px;
   padding-right: 2px;
 }
