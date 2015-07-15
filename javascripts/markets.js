@@ -7,7 +7,16 @@ $(document).ready(function(){
         $('html, body').stop().animate({
             'scrollTop': $target.offset().top
         }, 1200, 'swing');
+
+
     });
+    // google.maps.event.addDomListener(window, 'load', initializeMap);
+    //
+    // google.maps.event.addDomListener(window, 'load', codeAddress);
+
+    initializeMap();
+    codeAddress();
+
 });
 
 
@@ -67,7 +76,7 @@ var addresscode;
 var image = 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png';
 
 function codeAddress() {
-  var address = document.getElementById("address").value;
+  // var address = document.getElementById("address").value;
   // var day = document.getElementById("day").value;
 
 
@@ -120,10 +129,3 @@ function codeAddress() {
     }
   }
 }
-
-
-
-
-  google.maps.event.addDomListener(window, 'load', initializeMap);
-
-  google.maps.event.addDomListener(window, 'load', codeAddress);
