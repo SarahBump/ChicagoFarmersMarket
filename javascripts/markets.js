@@ -11,6 +11,7 @@ $(document).ready(function(){
 });
 
 
+
 console.log("map loaded!")
 var map
 
@@ -69,6 +70,7 @@ function codeAddress() {
   var address = document.getElementById("address").value;
   // var day = document.getElementById("day").value;
 
+
   if(address && (day==false)){
     geocoder.geocode( { "address": address}, function(results, status) {
       console.log(results[0].geometry.location);
@@ -86,7 +88,9 @@ function codeAddress() {
       }
     });
   }
-  else if((address==false)){
+
+
+  else if(day && (address==false)){
     for (var i = 0; i < markets.length; i++) {
       if (markets[i].day == day) {
         map.setZoom(15);
@@ -121,5 +125,8 @@ function codeAddress() {
 
 
   google.maps.event.addDomListener(window, 'load', initializeMap);
+<<<<<<< HEAD
 
   google.maps.event.addDomListener(window, 'load', codeAddress);
+=======
+>>>>>>> 37a96f263e556cc1fed777f7ebb338dbfdef4b9d
