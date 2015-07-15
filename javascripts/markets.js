@@ -1,4 +1,16 @@
 
+$(document).ready(function(){
+    $('a[href^="#"]').on('click',function (e) {
+        e.preventDefault();
+        var target = this.hash;
+        var $target = $(target);
+        $('html, body').stop().animate({
+            'scrollTop': $target.offset().top
+        }, 1200, 'swing');
+    });
+});
+
+
 console.log("map loaded!")
 var map
 
@@ -109,3 +121,5 @@ function codeAddress() {
 
 
   google.maps.event.addDomListener(window, 'load', initializeMap);
+
+  google.maps.event.addDomListener(window, 'load', codeAddress);
