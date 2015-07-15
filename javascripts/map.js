@@ -24,7 +24,7 @@ $.ajax({
         google.maps.event.addListener(marker, 'click', (function(marker, i) {
         return function() {
           console.log(marker.intersection)
-          $("#saved").append("<li>"+ marker.intersection +"  "+ marker.day + "</li>" +" time: "+ "</li>"  +marker.start + " - "+ marker.end);
+          $("#saved").prepend("<li>"+ marker.intersection +"  "+ marker.day + "</li>" +" time: "+ "</li>"  +marker.start + " - "+ marker.end);
         }
         })(marker, i));
       };
