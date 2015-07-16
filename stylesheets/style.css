@@ -5,6 +5,7 @@
     background-size: cover;
     height: 650px;
  }
+
 #section-2{
   background-color: white;
   background-repeat: no-repeat;
@@ -12,7 +13,6 @@
   background-size: cover;
   height: 650px;
 }
-
 
 #map {
   width: 500px;
@@ -25,7 +25,7 @@
   /*float: left;*/
   overflow: scroll;
   width: auto;
-  height: 450px;
+  height: 170px;
   overflow: scroll;
   border: 5px solid #FCFF6C;
   text-decoration: none;
@@ -54,7 +54,7 @@ p {
   font: helvetica;
 }
 li {
-  margin-top: 10px; 
+  margin-top: 10px;
   padding-left: 2px;
   padding-right: 2px;
 }
