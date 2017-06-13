@@ -1,40 +1,38 @@
 
 $(document).ready(function(){
-    $('a[href^="#"]').on('click',function (e) {
-        e.preventDefault();
-        var target = this.hash;
-        var $target = $(target);
-        $('html, body').stop().animate({
-            'scrollTop': $target.offset().top
-        }, 1200, 'swing');
+  //$('a[href="^#"]').on('click',function (e) {
+  //    e.preventDefault();
+  //    var target = this.hash;
+  //    var $target = $(target);
+  //    $('html, body').stop().animate({
+  //        'scrollTop': $target.offset().top
+  //    }, 1200, 'swing');
+  //
+  //
+  //});
+  //// google.maps.event.addDomListener(window, 'load', initializeMap);
+  ////
+  //// google.maps.event.addDomListener(window, 'load', codeAddress);
 
-
-    });
-    // google.maps.event.addDomListener(window, 'load', initializeMap);
-    //
-    // google.maps.event.addDomListener(window, 'load', codeAddress);
-
-    initializeMap();
+    initMap();
     codeAddress();
 
 });
 
 
 
-console.log("map loaded!")
-var map
 
-function initializeMap(){
-var defaultCenter = new google.maps.LatLng(41.893974, -87.627945);
 
-var defaultOptions = {
-  zoom: 12,  //this was 14
-  center: defaultCenter,
-  mapTypeId: google.maps.MapTypeId.ROADMAP
-}
+function initMap(){
+  var defaultCenter = new google.maps.LatLng(41.893974, -87.627945);
 
-map = new google.maps.Map(document.getElementById('map'), defaultOptions);
+  var defaultOptions = {
+    zoom: 12,  //this was 14
+    center: defaultCenter,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  };
 
+  map = new google.maps.Map(document.getElementById('map'), defaultOptions);
 
   if(navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
@@ -76,11 +74,11 @@ var addresscode;
 var image = 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png';
 
 function codeAddress() {
-  // var address = document.getElementById("address").value;
-  // var day = document.getElementById("day").value;
+  var address = document.getElementById("address").value;
+  //var day = document.getElementById("day").value;
 
 
-  if(address && (day==false)){
+  if(address){
     geocoder.geocode( { "address": address}, function(results, status) {
       console.log(results[0].geometry.location);
       addresscode=results[0].geometry.location
@@ -99,33 +97,33 @@ function codeAddress() {
   }
 
 
-  else if(day && (address==false)){
-    for (var i = 0; i < markets.length; i++) {
-      if (markets[i].day == day) {
-        map.setZoom(15);
-      //here is where we want to call some function that deletes all of the current markers
-        //makes marker for each data point
-          var marker = new google.maps.Marker({
-            position: new google.maps.LatLng(markets[i].latitude, markets[i].longitude),
-            map: map,
-            intersection: markets[i].intersection,
-            day: markets[i].day,
-            start: markets[i].start_time,
-            end: markets[i].end_time,
-            icon: image
-          });
-
-        //assigns click event to each one
-          // google.maps.event.addListener(marker, 'click', (function(marker, i) {
-          // return function() {
-          //   console.log(marker.intersection)
-          //   $("#saved").append("<li>"+ marker.intersection +"  "+ marker.day + "</li>" +" time: "+ "</li>"  +marker.start + " - "+ marker.end);
-          // }
-          // })(marker, i));
-          console.log(markets[i])
-
-        };
-        //we need to pass in the pass in what we have in market data into a new function that creates different markers that only will render if the day matches what you placed in the field to the object's day
-    }
-  }
+  //else if(day){
+  //  for (var i = 0; i < markets.length; i++) {
+  //    if (markets[i].day == day) {
+  //      map.setZoom(15);
+  //      //here is where we want to call some function that deletes all of the current markers
+  //      //makes marker for each data point
+  //      var marker = new google.maps.Marker({
+  //        position: new google.maps.LatLng(markets[i].latitude, markets[i].longitude),
+  //        map: map,
+  //        intersection: markets[i].intersection,
+  //        day: markets[i].day,
+  //        start: markets[i].start_time,
+  //        end: markets[i].end_time,
+  //        icon: image
+  //      });
+  //
+  //      //assigns click event to each one
+  //      // google.maps.event.addListener(marker, 'click', (function(marker, i) {
+  //      // return function() {
+  //      //   console.log(marker.intersection)
+  //      //   $("#saved").append("<li>"+ marker.intersection +"  "+ marker.day + "</li>" +" time: "+ "</li>"  +marker.start + " - "+ marker.end);
+  //      // }
+  //      // })(marker, i));
+  //      console.log(markets[i])
+  //
+  //    };
+  //    //we need to pass in the pass in what we have in market data into a new function that creates different markers that only will render if the day matches what you placed in the field to the object's day
+  //  }
+  //}
 }
